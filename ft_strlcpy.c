@@ -6,14 +6,16 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 10:55:49 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/02 18:52:12 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/12 12:25:41 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcpy(char *dest, const char *src, size_t destsize)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
-	size_t src_len;
-	size_t i;
+	size_t	src_len;
+	size_t	i;
 
 	i = 0;
 	src_len = ft_strlen(src);
@@ -25,5 +27,5 @@ size_t ft_strlcpy(char *dest, const char *src, size_t destsize)
 		i++;
 	}
 	dest[i] = '\0';
-   return (src_len);	
+	return (src_len);
 }

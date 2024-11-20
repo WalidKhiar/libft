@@ -6,11 +6,13 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:43:46 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/02 18:53:35 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/09 17:31:49 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (c + 32);

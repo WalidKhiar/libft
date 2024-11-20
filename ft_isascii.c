@@ -6,11 +6,13 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:10:53 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/02 18:47:19 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/10 14:19:04 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int v)
+#include "libft.h"
+
+int	ft_isascii(int v)
 {
 	if (v >= 0 && v <= 127)
 		return (1);

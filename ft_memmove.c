@@ -6,15 +6,16 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 22:45:31 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/02 18:51:31 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/12 12:12:02 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memmove(void *dest, const void *src, size_t len)
+
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char *dest_ptr;
-	char *src_ptr;
+	char	*dest_ptr;
+	char	*src_ptr;
 
 	dest_ptr = (char *)dest;
 	src_ptr = (char *)src;

@@ -6,7 +6,7 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:52:41 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/06 18:55:17 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/15 09:49:59 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static size_t	ft_len_word(const char *s, char c)
 	return (len);
 }
 
-static void	free_split(char **ptr, size_t count)
+static void	*free_split(char **ptr, size_t count)
 {
 	size_t	i;
 
@@ -54,20 +54,11 @@ static void	free_split(char **ptr, size_t count)
 		i++;
 	}
 	free(ptr);
+	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_alocate_words(const char *s, char c, char **ptr, size_t i)
 {
-	size_t	count;
-	size_t	len_word;
-	size_t	i;
-	char	**ptr;
-
-	i = 0;
-	count = wie_viel_worter(s, c);
-	ptr = (char **)malloc(sizeof(char *) * (count + 1));
-	if (!ptr)
-		return (NULL);
 	while (*s)
 	{
 		if (*s == c)
@@ -75,16 +66,28 @@ char	**ft_split(char const *s, char c)
 			s++;
 			continue ;
 		}
-		len_word = ft_len_word(s, c);
-		ptr[i] = ft_substr(s, 0, len_word);
+		ptr[i] = ft_substr(s, 0, ft_len_word(s, c));
 		if (!ptr[i])
-		{
-			free_split(ptr, i);
-			return (NULL);
-		}
+			return (free_split(ptr, i));
 		i++;
-		s += len_word;
+		s += ft_len_word(s, c);
 	}
 	ptr[i] = NULL;
 	return (ptr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	count;
+	size_t	i;
+	char	**ptr;
+
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	count = wie_viel_worter(s, c);
+	ptr = (char **)malloc(sizeof(char *) * (count + 1));
+	if (!ptr)
+		return (NULL);
+	return (ft_alocate_words(s, c, ptr, i));
 }

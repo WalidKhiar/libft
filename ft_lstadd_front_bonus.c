@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 10:54:41 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/16 19:26:34 by oukhiar          ###   ########.fr       */
+/*   Created: 2024/11/05 18:14:20 by oukhiar           #+#    #+#             */
+/*   Updated: 2024/11/16 18:05:34 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int b)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if ((b >= 48 && b <= 57) || ((b >= 65 && b <= 90) || (b >= 97 && b <= 122)))
-		return (1);
-	return (0);
+	if (!lst)
+		return ;
+	if (new != NULL)
+		new->next = *lst;
+	*lst = new;
 }

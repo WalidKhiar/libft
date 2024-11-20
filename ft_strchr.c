@@ -6,11 +6,13 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:52:37 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/02 18:51:56 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/11 19:33:21 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- char *ft_strchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
@@ -18,7 +20,7 @@
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }

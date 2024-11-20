@@ -6,13 +6,13 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:08:06 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/02 18:53:29 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/12 13:35:19 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	countlen(char const *s1, char const *set)
+static size_t	countlen(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;

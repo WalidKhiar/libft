@@ -6,19 +6,21 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:46:23 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/02 18:52:09 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/15 14:04:03 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include"libft.h"
-size_t ft_strlcat(char *dest, const char *src, size_t destsize)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 {
-	size_t src_len;
-	size_t dest_len;
-	size_t counter;
+	size_t	src_len;
+	size_t	dest_len;
+	size_t	counter;
 
 	counter = 0;
+	if (!dest && !destsize)
+		return (ft_strlen(src));
 	src_len = ft_strlen(src);
 	dest_len = ft_strlen(dest);
 	if (destsize == 0 || destsize <= dest_len)

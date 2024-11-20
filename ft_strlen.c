@@ -6,13 +6,17 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 12:22:03 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/02 18:52:15 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/16 10:08:07 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int i = 0;
+	size_t	i;
+
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);

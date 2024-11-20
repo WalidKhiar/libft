@@ -6,20 +6,21 @@
 /*   By: oukhiar <oukhiar@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:34:49 by oukhiar           #+#    #+#             */
-/*   Updated: 2024/11/06 21:50:14 by oukhiar          ###   ########.fr       */
+/*   Updated: 2024/11/16 19:26:06 by oukhiar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_atoi(const char *str)
 {
-	int		res;
-	int		sign;
-// the function should return the 1 if the input biger than range of integer
+	int	res;
+	int	sign;
+
 	res = 0;
 	sign = 1;
-	if (!(((*str >= '0') && (*str <= '9')) || (*str == '+' || *str == '-')))
-		return (0);
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
